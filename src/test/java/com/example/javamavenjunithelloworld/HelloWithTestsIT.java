@@ -31,6 +31,7 @@ public class HelloWithTestsIT {
     public void cleanUp() {
         // Restore the original System.out to prevent weirdness in any following tests.
         System.setOut(originalOut);
+          System.setOut(originalOut);
     }
 
     @Test
