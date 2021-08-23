@@ -31,6 +31,8 @@ public class HelloTest {
 
         assertThat(os.toString(), is(equalTo(String.format("%s%s", Hello.HELLO, System.lineSeparator()))));
     }
+    
+    
 
     @Test
     public void testSayHelloAFewTimes() {
