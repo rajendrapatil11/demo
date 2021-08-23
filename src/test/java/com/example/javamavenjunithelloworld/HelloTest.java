@@ -45,6 +45,19 @@ public class HelloTest {
         String goal = String.format("%1$s%2$s%1$s%2$s%1$s%2$s", Hello.HELLO, System.lineSeparator());
         assertThat(os.toString(), is(equalTo(goal)));
     }
+ @Test
+    public void testSayHelloAFewTimes1() {
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream stream = new PrintStream(os, true);
+
+        Hello hi = new Hello();
+        hi.setTimes(3);
+        hi.sayHello(stream);
+
+        // Does it say "Hello!" three times?
+        String goal = String.format("%1$s%2$s%1$s%2$s%1$s%2$s", Hello.HELLO, System.lineSeparator());
+        assertThat(os.toString(), is(equalTo(goal)));
+    }
 
     @Test
     public void testIllegalArgumentForHelloTooMuch() {
