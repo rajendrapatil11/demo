@@ -5,6 +5,7 @@ import com.verinite.model.Item;
 public class ItemBuilder {
   private Item item = new Item();
   
+  
   public ItemBuilder id(int id) {
     item.setId(id);
     return this;
