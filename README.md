@@ -1,28 +1,38 @@
-# A Java/Maven/JUnit HelloWorld example
+# Spring-boot-data-H2-embedded
 
-A „Hello World!” sample written in Java using Maven for the build, that showcases a few very simple tests.
+In this app, I used H2 in-memory database for demo purpose
 
-This example demonstrates:
+**Application.properties**
 
-* A simple Java 8 application with tests
-* Unit tests written with [JUnit 5](https://junit.org/junit5/)
-* Integration tests written with [JUnit 5](https://junit.org/junit5/)
-* Code coverage reports via [JaCoCo](https://www.jacoco.org/jacoco/)
-* A Maven build that puts it all together
+```
+spring.datasource.url=jdbc:h2:mem:TEST;DB_CLOSE_DELAY=-1;
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.platform=h2
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+```
 
-## Running the tests
+This single interface will do all the magic for you
 
-* To run the unit tests, call `mvn test`
-* To run the integration tests as well, call `mvn verify`
-* Code coverage reports are generated when `mvn verify` (or a full `mvn clean install`) is called.
-  Point a browser at the output in `target/site/jacoco-both/index.html` to see the report.
+```
+public interface EmployeeService extends JpaRepository<Employee, Integer>{
+}
+```
 
-## Conventions
+**To Run without Docker**
 
-This example follows the following basic conventions:
+```
+> mvn clean install
+> java -jar target/spring-h2-demo.jar
+```
 
-| | unit test | integration test |
-| --- | --- | --- |
-| **resides in:** | `src/test/java/*Test.java` | `src/test/java/*IT.java` |
-| **executes in Maven phase:** | test | verify |
-| **handled by Maven plugin:** | [surefire](http://maven.apache.org/surefire/maven-surefire-plugin/) | [failsafe](http://maven.apache.org/surefire/maven-failsafe-plugin/) |
+**To Run with Docker**
+```
+> mvn clean install
+> docker build -t springboot-h2-sample
+> docker run -d -p 8080:8080 springboot-h2-sample
+
+> docker stop <image-name>
+```
