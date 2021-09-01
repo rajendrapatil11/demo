@@ -1,32 +1,20 @@
 package com.verinite.test;
 
-import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.CoreMatchers.hasItems;
-import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
-
 import java.util.Arrays;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
-
-import com.google.gson.Gson;
 import com.verinite.controller.ItemController;
 import com.verinite.model.Item;
 import com.verinite.repository.ItemRepository;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
+@SuppressWarnings("deprecation")
 @RunWith(MockitoJUnitRunner.class)
 public class ItemTests {
   private static final int CHECKED_ITEM_ID = 1;

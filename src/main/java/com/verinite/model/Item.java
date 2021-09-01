@@ -2,7 +2,6 @@ package com.verinite.model;
 
 import javax.persistence.*;
 
-
 @Entity
 public class Item {
   @Id
