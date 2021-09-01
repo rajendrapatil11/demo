@@ -56,7 +56,15 @@ public class ItemTests {
  
     .containsOnly(CHECKED_ITEM, UNCHECKED_ITEM);
   }
+ @Test
+  public void whenFindingItemsItShouldReturnAllItems1() {
 
+    given(repository.findAll()).willReturn(Arrays.asList(CHECKED_ITEM, UNCHECKED_ITEM));
+
+    assertThat(controller.findItems())
+ 
+    .containsOnly(CHECKED_ITEM, UNCHECKED_ITEM);
+  }
   @Test
   public void whenAddingItemItShouldReturnTheSavedItem() {
 
