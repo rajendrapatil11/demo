@@ -35,7 +35,7 @@ public class ItemTests {
   private ItemRepository repository;
   private ArgumentCaptor<Item> anyItem = ArgumentCaptor.forClass(Item.class);
   
-  /*@Test
+  @Test
   public void whenFindingItemsItShouldReturnAllItems() {
 
     given(repository.findAll()).willReturn(Arrays.asList(CHECKED_ITEM, UNCHECKED_ITEM));
@@ -43,7 +43,7 @@ public class ItemTests {
     assertThat(controller.findItems())
  
     .containsOnly(CHECKED_ITEM, CHECKED_ITEM);
-  }*/
+  }
   @Test
   public void whenFindingItemsItShouldReturnAllItems() {
 
