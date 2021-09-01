@@ -34,7 +34,7 @@ public class ItemTests {
   @Mock
   private ItemRepository repository;
   private ArgumentCaptor<Item> anyItem = ArgumentCaptor.forClass(Item.class);
-  
+  /*
   @Test
   public void whenFindingItemsItShouldReturnAllItems() {
 
@@ -43,7 +43,7 @@ public class ItemTests {
     assertThat(controller.findItems())
  
     .containsOnly(CHECKED_ITEM, CHECKED_ITEM);
-  }
+  }*/
   @Test
   public void whenFindingItemsItShouldReturnAllItems() {
 
