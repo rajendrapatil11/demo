@@ -57,7 +57,7 @@ public class ItemTests {
     .containsOnly(CHECKED_ITEM, UNCHECKED_ITEM);
   }
  @Test
-  public void whenFindingItemsItShouldReturnAllItems1() {
+  public void whenFindingItemsItShouldReturnAllItems() {
 
     given(repository.findAll()).willReturn(Arrays.asList(CHECKED_ITEM, UNCHECKED_ITEM));
 
