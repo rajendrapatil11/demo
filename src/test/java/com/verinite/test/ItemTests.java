@@ -131,6 +131,6 @@ public class ItemTests {
  
     controller.deleteItem(CHECKED_ITEM_ID);
    
-    verify(repository).deleteById(CHECKED_ITEM_ID);
+    verify(repository).deleteById("2010");
   }
 }
