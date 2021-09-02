@@ -34,18 +34,7 @@ public class ItemTests {
   @Mock
   private ItemRepository repository;
   private ArgumentCaptor<Item> anyItem = ArgumentCaptor.forClass(Item.class);
-  /*
-  @Test
-  public void whenFindingItemsItShouldReturnAllItems() {
 
-    given(repository.findAll()).willReturn(Arrays.asList(CHECKED_ITEM, UNCHECKED_ITEM));
-
-    assertThat(controller.findItems())
- 
-    .containsOnly(CHECKED_ITEM, CHECKED_ITEM);
-  }*/
-  
-  
   @Test
   public void whenFindingItemsItShouldReturnAllItems() {
 
@@ -78,42 +67,6 @@ public class ItemTests {
     .isSameAs(CHECKED_ITEM);
   }
   
-  //RestAssured get All Item
-	/*
-	 * @Test public void testItemList() { Response resp=(Response)
-	 * RestAssured.given().when().get(
-	 * "http://demo3-env.eba-vnbfjk9q.us-east-2.elasticbeanstalk.com/items").then().
-	 * extract().response(); assertEquals(200, resp.getStatusCode()); }
-	 * 
-	 * //Save Data to Item
-	 * 
-	 * @Test public void testSaveItem() { Item item=new Item(); item.setId(3);
-	 * item.setChecked(true); item.setDescription("data");
-	 * 
-	 * Response response =
-	 * RestAssured.given().contentType(ContentType.JSON).header("Content-Type",
-	 * ContentType.JSON) .body(new Gson().toJson(item)).post(
-	 * "http://demo3-env.eba-vnbfjk9q.us-east-2.elasticbeanstalk.com/items").then().
-	 * extract().response();
-	 * 
-	 * assertEquals(200, response.getStatusCode()); }
-	 * 
-	 * //Update to Item
-	 * 
-	 * @Test public void testupdateItem() { Item item=new Item(); item.setId(3);
-	 * item.setChecked(false); item.setDescription("sdsdsdas");
-	 * 
-	 * Response response = RestAssured.given().baseUri(
-	 * "http://demo3-env.eba-vnbfjk9q.us-east-2.elasticbeanstalk.com/items/1").
-	 * header("Content-Type", ContentType.JSON) .body(new
-	 * Gson().toJson(item)).when().put().then().extract().response(); // Response
-	 * resp=(Response)
-	 * RestAssured.given().when().get("http://localhost:8086/items/").then().extract
-	 * ().response();
-	 * 
-	 * assertEquals(200, response.getStatusCode()); }
-	 */
-  
   @Test
   public void whenUpdatingItemItShouldUseTheGivenID() {
    
@@ -131,6 +84,6 @@ public class ItemTests {
  
     controller.deleteItem(CHECKED_ITEM_ID);
    
-    verify(repository).deleteById("2011");
+    verify(repository).deleteById(2034);
   }
 }
