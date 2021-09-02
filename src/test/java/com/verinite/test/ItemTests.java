@@ -45,6 +45,7 @@ public class ItemTests {
     .containsOnly(CHECKED_ITEM, CHECKED_ITEM);
   }*/
   
+  
   @Test
   public void whenFindingItemsItShouldReturnAllItems() {
 
